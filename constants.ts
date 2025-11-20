@@ -91,9 +91,102 @@ export const FEATURED_UNIVERSITIES: University[] = [
   }
 ];
 
-export const COUNTRIES = [
-  "USA", "UK", "Canada", "Australia", "Germany", "France", "Netherlands", "Sweden", "Japan", "Singapore"
+export const TUITION_FREE_UNIVERSITIES: University[] = [
+  {
+    id: 'tf-1',
+    name: 'Technical University of Munich (TUM)',
+    location: 'Munich, Germany',
+    ranking: '#28 World',
+    tuitionRange: 'No Tuition Fees (Admin fee ~€150/sem)',
+    description: 'Top-ranked German university specializing in Engineering and Technology. No tuition fees for most programs.',
+    website: 'https://www.tum.de',
+    tags: ['Germany', 'Free Tuition', 'Engineering'],
+    imageUrl: 'https://picsum.photos/id/1067/400/250'
+  },
+  {
+    id: 'tf-2',
+    name: 'Ludwig Maximilian University of Munich',
+    location: 'Munich, Germany',
+    ranking: '#54 World',
+    tuitionRange: 'No Tuition Fees',
+    description: 'One of Germany\'s oldest and most prestigious universities, offering a wide range of programs for free.',
+    website: 'https://www.lmu.de',
+    tags: ['Germany', 'Research', 'Humanities'],
+    imageUrl: 'https://picsum.photos/id/1048/400/250'
+  },
+  {
+    id: 'tf-3',
+    name: 'Heidelberg University',
+    location: 'Heidelberg, Germany',
+    ranking: '#87 World',
+    tuitionRange: '€1,500 / semester (Non-EU)',
+    description: 'Germany’s oldest university. While some fees exist for non-EU students, it remains highly affordable compared to US/UK.',
+    website: 'https://www.uni-heidelberg.de',
+    tags: ['Germany', 'Medicine', 'History'],
+    imageUrl: 'https://picsum.photos/id/1076/400/250'
+  },
+  {
+    id: 'tf-4',
+    name: 'RWTH Aachen University',
+    location: 'Aachen, Germany',
+    ranking: '#99 World',
+    tuitionRange: 'No Tuition Fees',
+    description: 'The largest technical university in Germany, highly renowned for mechanical engineering.',
+    website: 'https://www.rwth-aachen.de',
+    tags: ['Germany', 'Tech', 'Engineering'],
+    imageUrl: 'https://picsum.photos/id/1081/400/250'
+  },
+  {
+    id: 'tf-5',
+    name: 'Free University of Berlin',
+    location: 'Berlin, Germany',
+    ranking: '#98 World',
+    tuitionRange: 'No Tuition Fees',
+    description: 'Located in the capital, offering free education in a vibrant, international city.',
+    website: 'https://www.fu-berlin.de',
+    tags: ['Berlin', 'Political Science', 'Arts'],
+    imageUrl: 'https://picsum.photos/id/1050/400/250'
+  },
+  {
+    id: 'tf-6',
+    name: 'Berea College',
+    location: 'Kentucky, USA',
+    ranking: '#30 US Liberal Arts',
+    tuitionRange: 'No Tuition Promise',
+    description: 'The only top-ranked college in the US that provides a no-tuition promise to every enrolled student.',
+    website: 'https://www.berea.edu',
+    tags: ['USA', 'Liberal Arts', 'Full Scholarship'],
+    imageUrl: 'https://picsum.photos/id/1058/400/250'
+  },
+  {
+    id: 'tf-7',
+    name: 'Scuola Normale Superiore',
+    location: 'Pisa, Italy',
+    ranking: '#183 World',
+    tuitionRange: 'Free + Stipend',
+    description: 'An elite institution in Italy where students study for free and receive housing/board. Extremely competitive.',
+    website: 'https://www.sns.it',
+    tags: ['Italy', 'Elite', 'Science'],
+    imageUrl: 'https://picsum.photos/id/1042/400/250'
+  },
+  {
+    id: 'tf-8',
+    name: 'University of Vienna',
+    location: 'Vienna, Austria',
+    ranking: '#130 World',
+    tuitionRange: '€726 / semester (Non-EU)',
+    description: 'A historic university in the heart of Europe with very affordable tuition fees for international students.',
+    website: 'https://www.univie.ac.at',
+    tags: ['Austria', 'History', 'Culture'],
+    imageUrl: 'https://picsum.photos/id/1041/400/250'
+  }
 ];
+
+export const COUNTRIES = [
+  "USA", "UK", "Canada", "Australia", "Germany", "France", "Netherlands", "Sweden", "Japan", "Singapore",
+  "New Zealand", "Ireland", "Switzerland", "South Korea", "Italy", "Spain", "China", "Finland", "Norway", "Denmark", 
+  "Austria", "Belgium", "Malaysia"
+].sort();
 
 export const DEGREE_LEVELS = [
   DegreeLevel.UNDERGRADUATE,

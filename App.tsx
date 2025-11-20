@@ -1,9 +1,9 @@
 import React, { useState, useRef } from 'react';
-import { GraduationCap, School, Info, ChevronDown, ChevronUp } from 'lucide-react';
+import { GraduationCap, School, Info, ChevronDown, ChevronUp, Banknote } from 'lucide-react';
 import { InputForm } from './components/InputForm';
 import { StaticUniversityCard } from './components/StaticUniversityCard';
 import { AIResultSection } from './components/AIResultSection';
-import { FEATURED_UNIVERSITIES } from './constants';
+import { FEATURED_UNIVERSITIES, TUITION_FREE_UNIVERSITIES } from './constants';
 import { StudentProfile, AIRecommendationResult } from './types';
 import { getUniversityRecommendations } from './services/geminiService';
 
@@ -12,6 +12,7 @@ const App: React.FC = () => {
   const [aiResult, setAiResult] = useState<AIRecommendationResult | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [viewAllFeatured, setViewAllFeatured] = useState(false);
+  const [viewAllTuitionFree, setViewAllTuitionFree] = useState(false);
   
   const resultsRef = useRef<HTMLDivElement>(null);
 
@@ -49,6 +50,10 @@ const App: React.FC = () => {
     ? FEATURED_UNIVERSITIES 
     : FEATURED_UNIVERSITIES.slice(0, 4);
 
+  const visibleTuitionFree = viewAllTuitionFree
+    ? TUITION_FREE_UNIVERSITIES
+    : TUITION_FREE_UNIVERSITIES.slice(0, 4);
+
   return (
     <div className="min-h-screen bg-slate-50 flex flex-col">
       {/* Navigation */}
@@ -62,7 +67,8 @@ const App: React.FC = () => {
           </div>
           <div className="hidden md:flex items-center gap-6 text-sm font-medium text-slate-600">
             <a href="#" onClick={scrollToTop} className="hover:text-indigo-600 transition-colors">Home</a>
-            <a href="#featured" onClick={(e) => scrollToSection(e, 'featured')} className="hover:text-indigo-600 transition-colors">Top Universities</a>
+            <a href="#featured" onClick={(e) => scrollToSection(e, 'featured')} className="hover:text-indigo-600 transition-colors">Top Rankings</a>
+            <a href="#tuition-free" onClick={(e) => scrollToSection(e, 'tuition-free')} className="hover:text-indigo-600 transition-colors">Tuition Free</a>
             <a href="#search" onClick={(e) => scrollToSection(e, 'search')} className="text-indigo-600 bg-indigo-50 px-4 py-2 rounded-full">Find My Match</a>
           </div>
         </div>
@@ -80,7 +86,7 @@ const App: React.FC = () => {
               Discover your dream university with our AI-powered recommendation engine. 
               We combine static rankings with real-time web data to find your perfect fit.
             </p>
-            <div className="flex justify-center gap-4">
+            <div className="flex flex-wrap justify-center gap-4">
                <a 
                  href="#search" 
                  onClick={(e) => scrollToSection(e, 'search')}
@@ -93,7 +99,7 @@ const App: React.FC = () => {
                  onClick={(e) => scrollToSection(e, 'featured')}
                  className="border border-indigo-400 text-indigo-100 px-8 py-3 rounded-lg font-semibold hover:bg-indigo-800 transition-colors cursor-pointer"
                >
-                 View Top Lists
+                 View Rankings
                </a>
             </div>
           </div>
@@ -146,14 +152,14 @@ const App: React.FC = () => {
 
           {/* Static Featured Section */}
           <section id="featured" className="scroll-mt-24">
-            <div className="flex items-center justify-between mb-8">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-8 gap-4">
               <div>
                 <h2 className="text-2xl font-bold text-slate-900">Top Rated Universities</h2>
-                <p className="text-slate-600">Curated list of world-class institutions (General Recommendations)</p>
+                <p className="text-slate-600">Curated list of world-class institutions (Global Rankings)</p>
               </div>
               <button 
                 onClick={() => setViewAllFeatured(!viewAllFeatured)}
-                className="text-indigo-600 font-medium hover:text-indigo-700 hidden sm:flex items-center gap-1"
+                className="text-indigo-600 font-medium hover:text-indigo-700 flex items-center gap-1 self-start sm:self-auto"
               >
                 {viewAllFeatured ? (
                   <>Show Less <ChevronUp className="w-4 h-4" /></>
@@ -168,15 +174,36 @@ const App: React.FC = () => {
                 <StaticUniversityCard key={uni.id} university={uni} />
               ))}
             </div>
+          </section>
 
-            {/* Mobile only button */}
-            <div className="mt-6 sm:hidden text-center">
+          {/* Tuition Free Section */}
+          <section id="tuition-free" className="scroll-mt-24">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-8 gap-4">
+              <div className="flex items-start gap-3">
+                <div className="bg-green-100 p-2 rounded-lg hidden sm:block">
+                  <Banknote className="w-6 h-6 text-green-700" />
+                </div>
+                <div>
+                  <h2 className="text-2xl font-bold text-slate-900">Tuition Free & Low Cost</h2>
+                  <p className="text-slate-600">High-quality education without the high price tag (Mostly Germany/Europe)</p>
+                </div>
+              </div>
               <button 
-                onClick={() => setViewAllFeatured(!viewAllFeatured)}
-                className="text-indigo-600 font-medium hover:text-indigo-700 inline-flex items-center gap-1"
+                onClick={() => setViewAllTuitionFree(!viewAllTuitionFree)}
+                className="text-indigo-600 font-medium hover:text-indigo-700 flex items-center gap-1 self-start sm:self-auto"
               >
-                 {viewAllFeatured ? 'Show Less' : 'View all rankings'}
+                {viewAllTuitionFree ? (
+                  <>Show Less <ChevronUp className="w-4 h-4" /></>
+                ) : (
+                  <>View full list <ChevronDown className="w-4 h-4" /></>
+                )}
               </button>
+            </div>
+            
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              {visibleTuitionFree.map(uni => (
+                <StaticUniversityCard key={uni.id} university={uni} />
+              ))}
             </div>
           </section>
 
