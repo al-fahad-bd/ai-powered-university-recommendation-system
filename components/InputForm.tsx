@@ -1,8 +1,9 @@
+
 import React, { useState } from 'react';
 import { StudentProfile, DegreeLevel } from '../types';
 import { COUNTRIES, DEGREE_LEVELS } from '../constants';
 import { Button } from './Button';
-import { Search, Globe, GraduationCap, DollarSign, BookOpen, Award } from 'lucide-react';
+import { Search, Globe, GraduationCap, DollarSign, BookOpen, Award, Briefcase, Calendar, FileText } from 'lucide-react';
 
 interface InputFormProps {
   onSubmit: (profile: StudentProfile) => void;
@@ -16,10 +17,13 @@ export const InputForm: React.FC<InputFormProps> = ({ onSubmit, isLoading }) => 
     country: COUNTRIES[0],
     budget: '',
     subject: '',
-    level: DegreeLevel.UNDERGRADUATE
+    level: DegreeLevel.UNDERGRADUATE,
+    gradYear: '',
+    researchExp: '',
+    workExp: ''
   });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
   };
@@ -42,7 +46,7 @@ export const InputForm: React.FC<InputFormProps> = ({ onSubmit, isLoading }) => 
         {/* Degree Level */}
         <div className="space-y-2">
           <label className="text-sm font-medium text-slate-700 flex items-center gap-2">
-            <GraduationCap className="w-4 h-4" /> Degree Level
+            <GraduationCap className="w-4 h-4" /> Target Degree Level
           </label>
           <select
             name="level"
@@ -136,11 +140,56 @@ export const InputForm: React.FC<InputFormProps> = ({ onSubmit, isLoading }) => 
             className="w-full p-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none transition-all"
           />
         </div>
+
+        {/* Graduation Year */}
+        <div className="space-y-2 md:col-span-2">
+          <label className="text-sm font-medium text-slate-700 flex items-center gap-2">
+            <Calendar className="w-4 h-4" /> Year of Graduation
+          </label>
+          <input
+            type="text"
+            name="gradYear"
+            placeholder="e.g. 2023 (Helps identify study gaps)"
+            value={formData.gradYear}
+            onChange={handleChange}
+            className="w-full p-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none transition-all"
+          />
+        </div>
+
+        {/* Research Experience */}
+        <div className="space-y-2 md:col-span-2">
+          <label className="text-sm font-medium text-slate-700 flex items-center gap-2">
+            <FileText className="w-4 h-4" /> Research Work / Academic Projects
+          </label>
+          <textarea
+            name="researchExp"
+            rows={2}
+            placeholder="E.g. Final year capstone on ML, Published paper on AI..."
+            value={formData.researchExp}
+            onChange={handleChange}
+            className="w-full p-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none transition-all resize-none"
+          />
+        </div>
+
+        {/* Work Experience */}
+        <div className="space-y-2 md:col-span-2">
+          <label className="text-sm font-medium text-slate-700 flex items-center gap-2">
+            <Briefcase className="w-4 h-4" /> Professional Work Experience
+          </label>
+          <textarea
+            name="workExp"
+            rows={3}
+            placeholder="E.g. 1 year as Flutter Developer, 6 months internship..."
+            value={formData.workExp}
+            onChange={handleChange}
+            className="w-full p-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none transition-all resize-none"
+          />
+        </div>
       </div>
 
       <div className="mt-8">
         <Button type="submit" className="w-full py-3 text-lg font-semibold shadow-md hover:shadow-lg transform hover:-translate-y-0.5" isLoading={isLoading}>
-          {isLoading ? 'Analyzing & Scraping Data...' : 'Generate Recommendations'}
+          {isLoading ? 'Analyzing Profile & Experience...' : 'Generate Recommendations'}
         </Button>
       </div>
     </form>

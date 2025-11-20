@@ -1,3 +1,4 @@
+
 export enum DegreeLevel {
   UNDERGRADUATE = 'Undergraduate',
   MASTERS = 'Masters',
@@ -11,6 +12,9 @@ export interface StudentProfile {
   budget: string;
   subject: string;
   level: DegreeLevel;
+  gradYear: string;
+  researchExp: string;
+  workExp: string;
 }
 
 export interface University {
