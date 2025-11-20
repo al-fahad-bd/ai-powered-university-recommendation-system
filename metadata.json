@@ -1,0 +1,5 @@
+{
+  "name": "UniPath AI",
+  "description": "A smart university recommender system comparing static top-tier lists with personalized AI-driven recommendations based on your academic profile.",
+  "requestFramePermissions": []
+}
