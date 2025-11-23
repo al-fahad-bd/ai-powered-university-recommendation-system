@@ -1,21 +1,31 @@
-import React from 'react';
+
+import React, { useState } from 'react';
 import { University } from '../types';
-import { MapPin, DollarSign, Award, ExternalLink } from 'lucide-react';
+import { MapPin, DollarSign, ExternalLink, School } from 'lucide-react';
 
 interface Props {
   university: University;
 }
 
 export const StaticUniversityCard: React.FC<Props> = ({ university }) => {
+  const [imgError, setImgError] = useState(false);
+
   return (
     <div className="bg-white rounded-xl overflow-hidden shadow-sm border border-slate-200 hover:shadow-md transition-all duration-300 flex flex-col h-full group">
-      <div className="relative h-40 overflow-hidden">
-        <img 
-          src={university.imageUrl} 
-          alt={university.name} 
-          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-        />
-        <div className="absolute top-3 right-3 bg-white/90 backdrop-blur-sm px-2 py-1 rounded-md text-xs font-bold text-indigo-600 shadow-sm">
+      <div className="relative h-40 overflow-hidden bg-slate-100">
+        {!imgError ? (
+          <img 
+            src={university.imageUrl} 
+            alt={university.name} 
+            onError={() => setImgError(true)}
+            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+          />
+        ) : (
+          <div className="w-full h-full flex items-center justify-center bg-slate-100 text-slate-300">
+            <School className="w-12 h-12" />
+          </div>
+        )}
+        <div className="absolute top-3 right-3 bg-white/90 backdrop-blur-sm px-2 py-1 rounded-md text-xs font-bold text-indigo-600 shadow-sm z-10">
           {university.ranking}
         </div>
       </div>

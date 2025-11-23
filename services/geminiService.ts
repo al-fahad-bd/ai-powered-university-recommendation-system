@@ -29,21 +29,35 @@ export const getUniversityRecommendations = async (profile: StudentProfile): Pro
       - Target Country: ${profile.country}
       - Annual Budget: ${profile.budget}
 
-      Please search the web for the LATEST available data (2024-2025) and recommend 3-5 universities that are a realistic match for this profile.
+      Please search the web for the LATEST available data (2024-2025) and recommend 4 universities that are a realistic match for this profile.
       
-      **Important:** 
-      - If the student has a study gap (e.g., graduated 2022/2023), prioritize universities that value work experience or offer programs suitable for professionals.
-      - If relevant work experience (e.g., App Development/Flutter) is listed, highlight how this strengthens their application.
+      **Formatting Instructions (CRITICAL):**
+      - Do NOT wrap the response in a code block.
+      - Start immediately with the first university.
+      - Separate each university using a horizontal rule exactly like this: "---"
+      - After the last university, add "---" and then provide a "### Summary" section.
+      
+      **For each university, strictly follow this format:**
+      ### [University Name]
+      **Location:** [City, Country]
+      **Tuition:** [Approximate fees per year]
+      **Acceptance Rate:** [Approximate rate]
+      **Website:** [Official website URL]
+      
+      **Why it's a match:**
+      [A concise paragraph explaining why this university fits the student's profile, specifically referencing their GPA, work experience, or research.]
 
-      For each university, provide:
-      1. University Name
-      2. Location
-      3. Approximate Tuition Fees (for international students)
-      4. Acceptance Rate (estimated)
-      5. Why it's a good fit (specifically referencing their GPA, work experience, or research if applicable).
-
-      Format the output cleanly using Markdown. Use bolding for keys (e.g., **Tuition:**).
-      Provide a concluding summary advice for the student, specifically addressing how their experience impacts their chances.
+      **Example:**
+      ### University of Tech
+      **Location:** City, Country
+      **Tuition:** $20,000/year
+      **Acceptance Rate:** 15%
+      **Website:** https://www.uni.edu
+      
+      **Why it's a match:**
+      ...
+      ---
+      ### Next University...
     `;
 
     const response = await ai.models.generateContent({
@@ -51,7 +65,6 @@ export const getUniversityRecommendations = async (profile: StudentProfile): Pro
       contents: prompt,
       config: {
         tools: [{ googleSearch: {} }], // Enable Search Grounding
-        // NOTE: responseMimeType and responseSchema are NOT allowed with googleSearch
       },
     });
 

@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { StudentProfile, DegreeLevel } from '../types';
 import { COUNTRIES, DEGREE_LEVELS } from '../constants';
@@ -33,26 +32,29 @@ export const InputForm: React.FC<InputFormProps> = ({ onSubmit, isLoading }) => 
     onSubmit(formData);
   };
 
+  const inputClasses = "w-full p-3 bg-white border border-slate-200 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none transition-all text-slate-900 placeholder-slate-400";
+  const labelClasses = "text-sm font-medium text-slate-700 flex items-center gap-2";
+
   return (
-    <form onSubmit={handleSubmit} className="bg-white p-6 md:p-8 rounded-2xl shadow-lg border border-slate-100">
-      <div className="flex items-center space-x-3 mb-6">
-        <div className="bg-indigo-100 p-2 rounded-lg">
+    <form onSubmit={handleSubmit} className="bg-white/80 backdrop-blur-md p-6 md:p-8 rounded-2xl shadow-xl border border-white/50 relative z-10">
+      <div className="flex items-center space-x-3 mb-6 border-b border-slate-100 pb-4">
+        <div className="bg-indigo-100 p-2 rounded-lg border border-indigo-200">
           <Search className="w-6 h-6 text-indigo-600" />
         </div>
-        <h2 className="text-xl font-bold text-slate-800">Find Your Match</h2>
+        <h2 className="text-xl font-bold text-slate-900">Find Your Match</h2>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {/* Degree Level */}
         <div className="space-y-2">
-          <label className="text-sm font-medium text-slate-700 flex items-center gap-2">
-            <GraduationCap className="w-4 h-4" /> Target Degree Level
+          <label className={labelClasses}>
+            <GraduationCap className="w-4 h-4 text-indigo-500" /> Target Degree Level
           </label>
           <select
             name="level"
             value={formData.level}
             onChange={handleChange}
-            className="w-full p-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none transition-all"
+            className={inputClasses}
           >
             {DEGREE_LEVELS.map(level => (
               <option key={level} value={level}>{level}</option>
@@ -62,8 +64,8 @@ export const InputForm: React.FC<InputFormProps> = ({ onSubmit, isLoading }) => 
 
         {/* Subject */}
         <div className="space-y-2">
-          <label className="text-sm font-medium text-slate-700 flex items-center gap-2">
-            <BookOpen className="w-4 h-4" /> Subject of Interest
+          <label className={labelClasses}>
+            <BookOpen className="w-4 h-4 text-indigo-500" /> Subject of Interest
           </label>
           <input
             type="text"
@@ -72,20 +74,20 @@ export const InputForm: React.FC<InputFormProps> = ({ onSubmit, isLoading }) => 
             placeholder="e.g. Computer Science, Law"
             value={formData.subject}
             onChange={handleChange}
-            className="w-full p-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none transition-all"
+            className={inputClasses}
           />
         </div>
 
         {/* Country */}
         <div className="space-y-2">
-          <label className="text-sm font-medium text-slate-700 flex items-center gap-2">
-            <Globe className="w-4 h-4" /> Preferred Country
+          <label className={labelClasses}>
+            <Globe className="w-4 h-4 text-indigo-500" /> Preferred Country
           </label>
           <select
             name="country"
             value={formData.country}
             onChange={handleChange}
-            className="w-full p-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none transition-all"
+            className={inputClasses}
           >
             {COUNTRIES.map(country => (
               <option key={country} value={country}>{country}</option>
@@ -95,8 +97,8 @@ export const InputForm: React.FC<InputFormProps> = ({ onSubmit, isLoading }) => 
 
         {/* Budget */}
         <div className="space-y-2">
-          <label className="text-sm font-medium text-slate-700 flex items-center gap-2">
-            <DollarSign className="w-4 h-4" /> Annual Budget (USD)
+          <label className={labelClasses}>
+            <DollarSign className="w-4 h-4 text-indigo-500" /> Annual Budget (USD)
           </label>
           <input
             type="text"
@@ -105,14 +107,14 @@ export const InputForm: React.FC<InputFormProps> = ({ onSubmit, isLoading }) => 
             placeholder="e.g. 20000"
             value={formData.budget}
             onChange={handleChange}
-            className="w-full p-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none transition-all"
+            className={inputClasses}
           />
         </div>
 
         {/* GPA */}
         <div className="space-y-2">
-          <label className="text-sm font-medium text-slate-700 flex items-center gap-2">
-            <Award className="w-4 h-4" /> GPA / Percentage
+          <label className={labelClasses}>
+            <Award className="w-4 h-4 text-indigo-500" /> GPA / Percentage
           </label>
           <input
             type="text"
@@ -121,14 +123,14 @@ export const InputForm: React.FC<InputFormProps> = ({ onSubmit, isLoading }) => 
             placeholder="e.g. 3.5 or 85%"
             value={formData.gpa}
             onChange={handleChange}
-            className="w-full p-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none transition-all"
+            className={inputClasses}
           />
         </div>
 
         {/* IELTS */}
         <div className="space-y-2">
-          <label className="text-sm font-medium text-slate-700 flex items-center gap-2">
-            <span className="font-bold text-xs border border-slate-400 rounded px-1">EN</span> IELTS Score
+          <label className={labelClasses}>
+            <span className="font-bold text-xs border border-slate-300 rounded px-1 text-indigo-500">EN</span> IELTS Score
           </label>
           <input
             type="text"
@@ -137,14 +139,14 @@ export const InputForm: React.FC<InputFormProps> = ({ onSubmit, isLoading }) => 
             placeholder="e.g. 7.0"
             value={formData.ielts}
             onChange={handleChange}
-            className="w-full p-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none transition-all"
+            className={inputClasses}
           />
         </div>
 
         {/* Graduation Year */}
         <div className="space-y-2 md:col-span-2">
-          <label className="text-sm font-medium text-slate-700 flex items-center gap-2">
-            <Calendar className="w-4 h-4" /> Year of Graduation
+          <label className={labelClasses}>
+            <Calendar className="w-4 h-4 text-indigo-500" /> Year of Graduation
           </label>
           <input
             type="text"
@@ -152,14 +154,14 @@ export const InputForm: React.FC<InputFormProps> = ({ onSubmit, isLoading }) => 
             placeholder="e.g. 2023 (Helps identify study gaps)"
             value={formData.gradYear}
             onChange={handleChange}
-            className="w-full p-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none transition-all"
+            className={inputClasses}
           />
         </div>
 
         {/* Research Experience */}
         <div className="space-y-2 md:col-span-2">
-          <label className="text-sm font-medium text-slate-700 flex items-center gap-2">
-            <FileText className="w-4 h-4" /> Research Work / Academic Projects
+          <label className={labelClasses}>
+            <FileText className="w-4 h-4 text-indigo-500" /> Research Work / Academic Projects
           </label>
           <textarea
             name="researchExp"
@@ -167,14 +169,14 @@ export const InputForm: React.FC<InputFormProps> = ({ onSubmit, isLoading }) => 
             placeholder="E.g. Final year capstone on ML, Published paper on AI..."
             value={formData.researchExp}
             onChange={handleChange}
-            className="w-full p-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none transition-all resize-none"
+            className={`${inputClasses} resize-none`}
           />
         </div>
 
         {/* Work Experience */}
         <div className="space-y-2 md:col-span-2">
-          <label className="text-sm font-medium text-slate-700 flex items-center gap-2">
-            <Briefcase className="w-4 h-4" /> Professional Work Experience
+          <label className={labelClasses}>
+            <Briefcase className="w-4 h-4 text-indigo-500" /> Professional Work Experience
           </label>
           <textarea
             name="workExp"
@@ -182,13 +184,13 @@ export const InputForm: React.FC<InputFormProps> = ({ onSubmit, isLoading }) => 
             placeholder="E.g. 1 year as Flutter Developer, 6 months internship..."
             value={formData.workExp}
             onChange={handleChange}
-            className="w-full p-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none transition-all resize-none"
+            className={`${inputClasses} resize-none`}
           />
         </div>
       </div>
 
       <div className="mt-8">
-        <Button type="submit" className="w-full py-3 text-lg font-semibold shadow-md hover:shadow-lg transform hover:-translate-y-0.5" isLoading={isLoading}>
+        <Button type="submit" variant="primary" className="w-full py-3 text-lg font-semibold shadow-lg shadow-indigo-500/30 hover:shadow-indigo-500/50 transform hover:-translate-y-0.5" isLoading={isLoading}>
           {isLoading ? 'Analyzing Profile & Experience...' : 'Generate Recommendations'}
         </Button>
       </div>
