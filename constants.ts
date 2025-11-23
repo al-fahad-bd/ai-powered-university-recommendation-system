@@ -11,7 +11,7 @@ export const FEATURED_UNIVERSITIES: University[] = [
     description: 'A global leader in engineering, computer science, and physical sciences innovation.',
     website: 'https://www.mit.edu',
     tags: ['Engineering', 'Tech', 'Research'],
-    imageUrl: 'https://images.unsplash.com/photo-1564981797816-1043664bf78d?auto=format&fit=crop&q=80&w=800'
+    imageUrl: 'https://images.unsplash.com/photo-1564981797816-1043664bf78d?auto=format&fit=crop&q=80&w=800' // MIT Dome
   },
   {
     id: '2',
@@ -22,7 +22,7 @@ export const FEATURED_UNIVERSITIES: University[] = [
     description: 'The oldest university in the English-speaking world, renowned for humanities and sciences.',
     website: 'https://www.ox.ac.uk',
     tags: ['Humanities', 'Law', 'Medicine'],
-    imageUrl: 'https://images.unsplash.com/photo-1590579491624-f98f36d4c763?auto=format&fit=crop&q=80&w=800'
+    imageUrl: 'https://images.unsplash.com/photo-1590579491624-f98f36d4c763?auto=format&fit=crop&q=80&w=800' // Oxford Architecture
   },
   {
     id: '3',
@@ -33,7 +33,7 @@ export const FEATURED_UNIVERSITIES: University[] = [
     description: 'Located in the heart of Silicon Valley, famous for its entrepreneurial spirit.',
     website: 'https://www.stanford.edu',
     tags: ['Business', 'CS', 'Innovation'],
-    imageUrl: 'https://images.unsplash.com/photo-1627556704302-624286467c65?auto=format&fit=crop&q=80&w=800'
+    imageUrl: 'https://images.unsplash.com/photo-1627556592933-ffe99c1cd9eb?auto=format&fit=crop&q=80&w=800' // Stanford Architecture
   },
   {
     id: '4',
@@ -44,7 +44,7 @@ export const FEATURED_UNIVERSITIES: University[] = [
     description: 'A cutting-edge STEM university with remarkably low tuition fees for international students.',
     website: 'https://ethz.ch',
     tags: ['STEM', 'Affordable', 'Europe'],
-    imageUrl: 'https://images.unsplash.com/photo-1510531704581-5b2870972060?auto=format&fit=crop&q=80&w=800'
+    imageUrl: 'https://images.unsplash.com/photo-1515488764276-beab7607c1e6?auto=format&fit=crop&q=80&w=800' // Zurich City/Academic
   },
   {
     id: '5',
@@ -55,7 +55,7 @@ export const FEATURED_UNIVERSITIES: University[] = [
     description: 'The oldest institution of higher learning in the United States, known for excellence in all fields.',
     website: 'https://www.harvard.edu',
     tags: ['Ivy League', 'Law', 'Business'],
-    imageUrl: 'https://images.unsplash.com/photo-1559135197-8a45ea74d367?auto=format&fit=crop&q=80&w=800'
+    imageUrl: 'https://images.unsplash.com/photo-1559136555-930d72f18615?auto=format&fit=crop&q=80&w=800' // Harvard Architecture
   },
   {
     id: '6',
@@ -66,7 +66,7 @@ export const FEATURED_UNIVERSITIES: University[] = [
     description: 'A collegiate public research university known for its rigorous academic standards and history.',
     website: 'https://www.cam.ac.uk',
     tags: ['Science', 'History', 'Research'],
-    imageUrl: 'https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?auto=format&fit=crop&q=80&w=800'
+    imageUrl: 'https://images.unsplash.com/photo-1492318858380-6927cb529462?auto=format&fit=crop&q=80&w=800' // King's College Chapel
   },
   {
     id: '7',
@@ -77,7 +77,7 @@ export const FEATURED_UNIVERSITIES: University[] = [
     description: 'A leading global university centered in Asia, influencing the future.',
     website: 'https://www.nus.edu.sg',
     tags: ['Asia', 'Technology', 'Global'],
-    imageUrl: 'https://images.unsplash.com/photo-1558452331-a6405b617b0d?auto=format&fit=crop&q=80&w=800'
+    imageUrl: 'https://images.unsplash.com/photo-1565967511849-76a60a516170?auto=format&fit=crop&q=80&w=800' // Singapore Modern/Green
   },
   {
     id: '8',
@@ -88,7 +88,7 @@ export const FEATURED_UNIVERSITIES: University[] = [
     description: 'Canada’s top university, located in one of the world’s most diverse cities.',
     website: 'https://www.utoronto.ca',
     tags: ['Canada', 'Research', 'Urban'],
-    imageUrl: 'https://images.unsplash.com/photo-1550411294-875307bccdd5?auto=format&fit=crop&q=80&w=800'
+    imageUrl: 'https://images.unsplash.com/photo-1625656463991-62d987679624?auto=format&fit=crop&q=80&w=800' // U of T Architecture
   }
 ];
 
@@ -98,11 +98,11 @@ export const TUITION_FREE_UNIVERSITIES: University[] = [
     name: 'Technical University of Munich (TUM)',
     location: 'Munich, Germany',
     ranking: '#28 World',
-    tuitionRange: 'No Tuition Fees (Admin fee ~€150/sem)',
+    tuitionRange: 'No Tuition Fees',
     description: 'Top-ranked German university specializing in Engineering and Technology. No tuition fees for most programs.',
     website: 'https://www.tum.de',
     tags: ['Germany', 'Free Tuition', 'Engineering'],
-    imageUrl: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=800'
+    imageUrl: 'https://images.unsplash.com/photo-1467269204594-9661b133dd2b?auto=format&fit=crop&q=80&w=800' // Munich Modern
   },
   {
     id: 'tf-2',
@@ -113,7 +113,7 @@ export const TUITION_FREE_UNIVERSITIES: University[] = [
     description: 'One of Germany\'s oldest and most prestigious universities, offering a wide range of programs for free.',
     website: 'https://www.lmu.de',
     tags: ['Germany', 'Research', 'Humanities'],
-    imageUrl: 'https://images.unsplash.com/photo-1568283661623-690224d52b1b?auto=format&fit=crop&q=80&w=800'
+    imageUrl: 'https://images.unsplash.com/photo-1595867865334-a2952053a948?auto=format&fit=crop&q=80&w=800' // Munich Classic
   },
   {
     id: 'tf-3',
@@ -121,10 +121,10 @@ export const TUITION_FREE_UNIVERSITIES: University[] = [
     location: 'Heidelberg, Germany',
     ranking: '#87 World',
     tuitionRange: '€1,500 / semester (Non-EU)',
-    description: 'Germany’s oldest university. While some fees exist for non-EU students, it remains highly affordable compared to US/UK.',
+    description: 'Germany’s oldest university. While some fees exist for non-EU students, it remains highly affordable.',
     website: 'https://www.uni-heidelberg.de',
     tags: ['Germany', 'Medicine', 'History'],
-    imageUrl: 'https://images.unsplash.com/photo-1628109673977-8d07147db95f?auto=format&fit=crop&q=80&w=800'
+    imageUrl: 'https://images.unsplash.com/photo-1587326417777-62f928929e47?auto=format&fit=crop&q=80&w=800' // Heidelberg Old Town
   },
   {
     id: 'tf-4',
@@ -135,7 +135,7 @@ export const TUITION_FREE_UNIVERSITIES: University[] = [
     description: 'The largest technical university in Germany, highly renowned for mechanical engineering.',
     website: 'https://www.rwth-aachen.de',
     tags: ['Germany', 'Tech', 'Engineering'],
-    imageUrl: 'https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&q=80&w=800'
+    imageUrl: 'https://images.unsplash.com/photo-1549488344-c76dc96495b5?auto=format&fit=crop&q=80&w=800' // Modern Industry/Tech
   },
   {
     id: 'tf-5',
@@ -146,7 +146,7 @@ export const TUITION_FREE_UNIVERSITIES: University[] = [
     description: 'Located in the capital, offering free education in a vibrant, international city.',
     website: 'https://www.fu-berlin.de',
     tags: ['Berlin', 'Political Science', 'Arts'],
-    imageUrl: 'https://images.unsplash.com/photo-1560964645-5c9f131f4e17?auto=format&fit=crop&q=80&w=800'
+    imageUrl: 'https://images.unsplash.com/photo-1560930950-5cc20e80e392?auto=format&fit=crop&q=80&w=800' // Berlin Architecture
   },
   {
     id: 'tf-6',
@@ -157,7 +157,7 @@ export const TUITION_FREE_UNIVERSITIES: University[] = [
     description: 'The only top-ranked college in the US that provides a no-tuition promise to every enrolled student.',
     website: 'https://www.berea.edu',
     tags: ['USA', 'Liberal Arts', 'Full Scholarship'],
-    imageUrl: 'https://images.unsplash.com/photo-1581363220556-91739c323f49?auto=format&fit=crop&q=80&w=800'
+    imageUrl: 'https://images.unsplash.com/photo-1548115682-1c6934c98031?auto=format&fit=crop&q=80&w=800' // US College Campus
   },
   {
     id: 'tf-7',
@@ -165,10 +165,10 @@ export const TUITION_FREE_UNIVERSITIES: University[] = [
     location: 'Pisa, Italy',
     ranking: '#183 World',
     tuitionRange: 'Free + Stipend',
-    description: 'An elite institution in Italy where students study for free and receive housing/board. Extremely competitive.',
+    description: 'An elite institution in Italy where students study for free and receive housing/board.',
     website: 'https://www.sns.it',
     tags: ['Italy', 'Elite', 'Science'],
-    imageUrl: 'https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?auto=format&fit=crop&q=80&w=800'
+    imageUrl: 'https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&q=80&w=800' // Italy Classic
   },
   {
     id: 'tf-8',
@@ -176,25 +176,25 @@ export const TUITION_FREE_UNIVERSITIES: University[] = [
     location: 'Vienna, Austria',
     ranking: '#130 World',
     tuitionRange: '€726 / semester (Non-EU)',
-    description: 'A historic university in the heart of Europe with very affordable tuition fees for international students.',
+    description: 'A historic university in the heart of Europe with very affordable tuition fees.',
     website: 'https://www.univie.ac.at',
     tags: ['Austria', 'History', 'Culture'],
-    imageUrl: 'https://images.unsplash.com/photo-1548695602-0e8c07e9973b?auto=format&fit=crop&q=80&w=800'
+    imageUrl: 'https://images.unsplash.com/photo-1528728329032-2972f65dfb3f?auto=format&fit=crop&q=80&w=800' // Vienna Library
   }
 ];
 
-// Generic high-quality academic images for AI recommendations
+// Generic high-quality academic images for AI recommendations (fallback if specific images fail)
 export const GENERIC_UNIVERSITY_IMAGES = [
-  'https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&q=80&w=800',
-  'https://images.unsplash.com/photo-1592280771884-1d1b15151c71?auto=format&fit=crop&q=80&w=800',
-  'https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&q=80&w=800',
-  'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&q=80&w=800',
-  'https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?auto=format&fit=crop&q=80&w=800',
-  'https://images.unsplash.com/photo-1492538368677-f6e0afe31dcc?auto=format&fit=crop&q=80&w=800',
-  'https://images.unsplash.com/photo-1590012314607-cda9d9b699ae?auto=format&fit=crop&q=80&w=800',
-  'https://images.unsplash.com/photo-1621640786029-22ad5961d5db?auto=format&fit=crop&q=80&w=800',
-  'https://images.unsplash.com/photo-1510531704581-5b2870972060?auto=format&fit=crop&q=80&w=800',
-  'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80&w=800'
+  'https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&q=80&w=800', // Classic College
+  'https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&q=80&w=800', // Campus Quad
+  'https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?auto=format&fit=crop&q=80&w=800', // Library Exterior
+  'https://images.unsplash.com/photo-1592280771884-1d1b15151c71?auto=format&fit=crop&q=80&w=800', // Modern Building
+  'https://images.unsplash.com/photo-1504812323935-2e912301f73b?auto=format&fit=crop&q=80&w=800', // Library Interior
+  'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&q=80&w=800', // Lecture Hall
+  'https://images.unsplash.com/photo-1590579491624-f98f36d4c763?auto=format&fit=crop&q=80&w=800', // Oxford Style
+  'https://images.unsplash.com/photo-1564981797816-1043664bf78d?auto=format&fit=crop&q=80&w=800', // MIT Dome
+  'https://images.unsplash.com/photo-1607237138186-73a6adf45638?auto=format&fit=crop&q=80&w=800', // Campus Life
+  'https://images.unsplash.com/photo-1525921429624-479b6a26d84d?auto=format&fit=crop&q=80&w=800'  // Archway
 ];
 
 export const COUNTRIES = [

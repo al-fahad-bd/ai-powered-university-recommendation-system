@@ -1,8 +1,9 @@
+
 import React, { useState } from 'react';
 import { StudentProfile, DegreeLevel } from '../types';
 import { COUNTRIES, DEGREE_LEVELS } from '../constants';
 import { Button } from './Button';
-import { Search, Globe, GraduationCap, DollarSign, BookOpen, Award, Briefcase, Calendar, FileText } from 'lucide-react';
+import { Search, Globe, GraduationCap, DollarSign, BookOpen, Award, Briefcase, Calendar, FileText, ChevronDown } from 'lucide-react';
 
 interface InputFormProps {
   onSubmit: (profile: StudentProfile) => void;
@@ -34,6 +35,7 @@ export const InputForm: React.FC<InputFormProps> = ({ onSubmit, isLoading }) => 
 
   const inputClasses = "w-full p-3 bg-white border border-slate-200 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none transition-all text-slate-900 placeholder-slate-400";
   const labelClasses = "text-sm font-medium text-slate-700 flex items-center gap-2";
+  const selectClasses = `${inputClasses} appearance-none pr-10 pl-4 cursor-pointer`;
 
   return (
     <form onSubmit={handleSubmit} className="bg-white/80 backdrop-blur-md p-6 md:p-8 rounded-2xl shadow-xl border border-white/50 relative z-10">
@@ -50,16 +52,21 @@ export const InputForm: React.FC<InputFormProps> = ({ onSubmit, isLoading }) => 
           <label className={labelClasses}>
             <GraduationCap className="w-4 h-4 text-indigo-500" /> Target Degree Level
           </label>
-          <select
-            name="level"
-            value={formData.level}
-            onChange={handleChange}
-            className={inputClasses}
-          >
-            {DEGREE_LEVELS.map(level => (
-              <option key={level} value={level}>{level}</option>
-            ))}
-          </select>
+          <div className="relative">
+            <select
+              name="level"
+              value={formData.level}
+              onChange={handleChange}
+              className={selectClasses}
+            >
+              {DEGREE_LEVELS.map(level => (
+                <option key={level} value={level}>{level}</option>
+              ))}
+            </select>
+            <div className="absolute inset-y-0 right-0 flex items-center px-3 pointer-events-none text-slate-500">
+              <ChevronDown className="w-4 h-4" />
+            </div>
+          </div>
         </div>
 
         {/* Subject */}
@@ -83,16 +90,21 @@ export const InputForm: React.FC<InputFormProps> = ({ onSubmit, isLoading }) => 
           <label className={labelClasses}>
             <Globe className="w-4 h-4 text-indigo-500" /> Preferred Country
           </label>
-          <select
-            name="country"
-            value={formData.country}
-            onChange={handleChange}
-            className={inputClasses}
-          >
-            {COUNTRIES.map(country => (
-              <option key={country} value={country}>{country}</option>
-            ))}
-          </select>
+          <div className="relative">
+            <select
+              name="country"
+              value={formData.country}
+              onChange={handleChange}
+              className={selectClasses}
+            >
+              {COUNTRIES.map(country => (
+                <option key={country} value={country}>{country}</option>
+              ))}
+            </select>
+            <div className="absolute inset-y-0 right-0 flex items-center px-3 pointer-events-none text-slate-500">
+              <ChevronDown className="w-4 h-4" />
+            </div>
+          </div>
         </div>
 
         {/* Budget */}
